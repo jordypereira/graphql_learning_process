@@ -1,0 +1,8 @@
+{
+  "name": "learnGraphql",
+  "version": "1.0.0",
+  "description": "I document my GraphQL learning process.",
+  "main": "index.js",
+  "author": "Jordy Pereira",
+  "license": "MIT"
+}
