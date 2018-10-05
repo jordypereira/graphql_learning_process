@@ -1,8 +1,15 @@
 {
-  "name": "learnGraphql",
+  "name": "learn-graphql",
   "version": "1.0.0",
   "description": "I document my GraphQL learning process.",
   "main": "index.js",
   "author": "Jordy Pereira",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^0.14.4"
+  }
 }
