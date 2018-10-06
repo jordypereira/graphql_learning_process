@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Setup FeatherJS Apollo Server met GraphQL | GraphQL Learning Process</title>
+    <meta name="description" content="For school I had to learn a new technology. We have to document it and keep a logbook. I chose GraphQL and documented my whole process on this site.">
+    
+    
+    <link rel="preload" href="/assets/css/styles.c7cd9ca9.css" as="style"><link rel="preload" href="/assets/js/app.c7cd9ca9.js" as="script"><link rel="preload" href="/assets/js/3.9695746c.js" as="script"><link rel="prefetch" href="/assets/js/2.a40b0877.js"><link rel="prefetch" href="/assets/css/1.styles.5a8ea794.css"><link rel="prefetch" href="/assets/js/1.5a8ea794.js"><link rel="prefetch" href="/assets/css/2.styles.a40b0877.css"><link rel="prefetch" href="/assets/js/4.8bb44726.js"><link rel="prefetch" href="/assets/js/5.815b4159.js"><link rel="prefetch" href="/assets/js/6.aadac39e.js"><link rel="prefetch" href="/assets/js/7.28cf0364.js"><link rel="prefetch" href="/assets/js/8.9057e96a.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.5a8ea794.css"><link rel="stylesheet" href="/assets/css/2.styles.a40b0877.css"><link rel="stylesheet" href="/assets/css/styles.c7cd9ca9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">GraphQL Learning Process</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://jordypereira.be/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  My Website
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/perjor/graphql_learning_process" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://jordypereira.be/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  My Website
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/perjor/graphql_learning_process" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <!----> </div> <div class="page"> <div class="content"><h1 id="setup-featherjs-apollo-server-met-graphql"><a href="#setup-featherjs-apollo-server-met-graphql" aria-hidden="true" class="header-anchor">#</a> Setup FeatherJS Apollo Server met GraphQL</h1> <h2 id="setup-project"><a href="#setup-project" aria-hidden="true" class="header-anchor">#</a> Setup project</h2> <p>Install the featherjs cli<br> <code>npm install -g @feathersjs/cli</code></p> <p>create the project</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">mkdir</span> project
+<span class="token function">cd</span> project
+feathers generate
+</code></pre></div><h2 id="add-babel-es2015-support"><a href="#add-babel-es2015-support" aria-hidden="true" class="header-anchor">#</a> Add babel es2015 support</h2> <p>Hij gebruikt de oude babel maar wij moeten dus op <a href="https://babeljs.io/docs/en/usage" target="_blank" rel="noopener noreferrer">de documentatie<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> gaan zoeken hoe het nu moet.</p> <p><code>yarn add @babel/core @babel/cli @babel/preset-env @babel/node</code></p> <p><em>babel.config.js</em></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> presets <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">[</span>
+    <span class="token string">&quot;@babel/env&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      targets<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        edge<span class="token punctuation">:</span> <span class="token string">&quot;17&quot;</span><span class="token punctuation">,</span>
+        firefox<span class="token punctuation">:</span> <span class="token string">&quot;60&quot;</span><span class="token punctuation">,</span>
+        chrome<span class="token punctuation">:</span> <span class="token string">&quot;67&quot;</span><span class="token punctuation">,</span>
+        safari<span class="token punctuation">:</span> <span class="token string">&quot;11.1&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> presets <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>Nu kunnen we met <code>npx babel src/</code> een source oproepen en dan krijgen we een javascript output.<br> <code>npx babel-node src/</code> compiled uw code en runt het dan met node.</p> <h2 id="apollo-server-graphql-and-graphql-tools"><a href="#apollo-server-graphql-and-graphql-tools" aria-hidden="true" class="header-anchor">#</a> Apollo Server, GraphQL and GraphQL Tools</h2> <p><a href="https://www.apollographql.com/docs/apollo-server/getting-started.html" target="_blank" rel="noopener noreferrer">apollo-server doc<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>Apollo-server en graphQL-tools geven bij het installeren aan welke versie van graphQL ze nodig hebben. apollo-server kan de nieuwste versie gebruiken maar de nieuwste dat graphql-tool kan gebruiken is op het moment 0.13.1.</p> <p><code>yarn add apollo-server graphql@^0.13.1 graphql-tools</code></p> <h2 id="create-graphql-service"><a href="#create-graphql-service" aria-hidden="true" class="header-anchor">#</a> Create GraphQL Service</h2> <p><code>feathers generate service</code></p> <p>Daarna moeten we een paar aanpassingen maken in <code>src/services/graphql/graphql.service.js</code></p> <h2 id="maak-graphql-resolvers-en-scheme"><a href="#maak-graphql-resolvers-en-scheme" aria-hidden="true" class="header-anchor">#</a> Maak GraphQL Resolvers en Scheme</h2> <p>Apollo Server heeft een schema (TypeDefs) en Resolvers nodig om gecreeerd te worden. We zullen deze in aparte files aanmaken.</p> <h2 id="define-de-schema-string"><a href="#define-de-schema-string" aria-hidden="true" class="header-anchor">#</a> Define de Schema String</h2> <p>in scheme.js maken we een lange string met alle Type Definities. Dit is vooral de schema dat de gebruiker gebruikt.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> typeDefs <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+  type Taco {
+    _id: String
+    meat: String
+    cheese: String
+    salsa: String
+  }
+
+  type RootQuery {
+    allTacos: [Taco]
+    tacos(meat: String!): [Taco]
+    taco(_id: String!): [Taco]
+  }
+
+  type RootMutation {
+    createTaco(meat: String!, cheese: String, salsa: String): Taco
+  }
+
+  schema {
+    query: RootQuery
+    mutation: RootMutation
+  }
+`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> typeDefs<span class="token punctuation">;</span>
+</code></pre></div><h2 id="maak-de-resolver"><a href="#maak-de-resolver" aria-hidden="true" class="header-anchor">#</a> Maak de Resolver</h2> <p>In <code>resolvers.js</code> maken we alle query's dat de database oproept.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Resolvers</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> Tacos <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">service</span><span class="token punctuation">(</span><span class="token string">&quot;tacos&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    RootQuery<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token function">allTacos</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> args<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Tacos<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function">tacos</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token punctuation">{</span> meat <span class="token punctuation">}</span><span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Tacos<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          query<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            meat<span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function">taco</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token punctuation">{</span> _id <span class="token punctuation">}</span><span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Tacos<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    RootMutation<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token function">createTaco</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> data<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Tacos<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="maak-de-database"><a href="#maak-de-database" aria-hidden="true" class="header-anchor">#</a> Maak de database</h2> <p><code>feathers generate service</code> en kies dan voor NeDB.<br>
+Feathers slaat dan alles vanzelf op.</p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">10/6/2018, 1:49:05 AM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/3.9695746c.js" defer></script><script src="/assets/js/app.c7cd9ca9.js" defer></script>
+  </body>
+</html>
