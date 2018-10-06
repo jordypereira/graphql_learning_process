@@ -1,6 +1,6 @@
 # New Technology: GraphQL
 
-Voor school moet ik een nieuwe technologie leren en dit documenteren. Hier volgt mijn verhaal hoe dat ik GraphQL begin te leren.
+> Voor school moet ik een nieuwe technologie leren en dit documenteren. Hier volgt mijn verhaal hoe dat ik GraphQL begin te leren.
 
 _5 oktober 2018_
 
@@ -17,16 +17,14 @@ Ik kreeg het project niet meteen aan de slag. De babel versie dat hij gebruikt i
 
 Hij maakt gebruik van [featherJS](https://docs.feathersjs.com/) en [apollo-server](https://www.apollographql.com/). Beide zijn ook enorm veranderd, dus dat wou ook niet meteen lukken. Zover mijn eerste project.
 
-## Node.js GraphQL Server Tutorial
+## GraphQL Typescript Server Boilerplate
 
-Ik heb veel bijgeleerd over babel en wat gelezen over featherjs en apollo-server, maar ik ga toch een andere tutorial kiezen om mee te beginnen. namelijk [Node.js GraphQL Server Tutorial](https://www.youtube.com/playlist?list=PLN3n1USn4xlnXfLBuSMFcYM5yei4oxdxB)
+Ik heb veel bijgeleerd over babel en wat gelezen over featherjs en apollo-server, maar ik ga toch een andere tutorial kiezen om mee te beginnen. namelijk [GraphQL Typescript Server Boilerplate](https://www.youtube.com/watch?v=2eWIr6bbons&list=PLN3n1USn4xlky9uj6wOhfsPez7KZOqm2V). Deze is redelijk recent van 23 april 2018. Deze tutorial ziet veel meer dan enkel GraphQL, zoals TypeScript en testing.
+
+In de Project Setup installeren we de stack. We gaan met GraphQL Yoga, TypeOrm en Typescript werken. Installatie loopt heel vlot.
+
+- [Project Setup](./Ben_Awad/GraphQL_Typescript_Server/episode0.md)
 
 ## Resources
 
-- [YouTuber Ben Awad](https://www.youtube.com/user/99baddawg)
-- [reddit.com/r/webdev](https://www.reddit.com/r/webdev/)
-- [GraphQL tutorials](https://www.youtube.com/watch?v=6Jw629xrkF8&list=PLN3n1USn4xlnd-eR3bEZvIr04yoiSRnUl)
-- [Babel](https://babeljs.io/docs/en/usage)
-- [FeatherJS](https://docs.feathersjs.com/)
-- [apollo-server](https://www.apollographql.com/)
-- [Node.js GraphQL Server Tutorial](https://www.youtube.com/playlist?list=PLN3n1USn4xlnXfLBuSMFcYM5yei4oxdxB)
+[Link to the resources page](./resources/)
