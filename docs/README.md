@@ -25,6 +25,8 @@ In de Project Setup installeren we de stack. We gaan met GraphQL Yoga, TypeOrm e
 
 - [Project Setup](./Ben_Awad/GraphQL_Typescript_Server/episode0.md)
 
+- [Creating an Entity](./Ben_Awad/GraphQL_Typescript_Server/episode1.md)
+
 ## Resources
 
 [Link to the resources page](./resources/)

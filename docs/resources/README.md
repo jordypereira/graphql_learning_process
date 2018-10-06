@@ -12,3 +12,6 @@
 - [tsconfig](https://github.com/benawad/node-ts-graphql-boilerplate/blob/10_session_express_middleware/tsconfig.json)
 - [Prettier](https://www.npmjs.com/package/prettier)
 - [tslint](https://github.com/benawad/node-ts-graphql-boilerplate/blob/10_session_express_middleware/tslint.json)
+- [uuid](https://www.npmjs.com/package/uuid)
+- [graphql-import](https://github.com/prisma/graphql-import)
+- [gql2ts](https://github.com/avantcredit/gql2ts/tree/master/packages/cli)

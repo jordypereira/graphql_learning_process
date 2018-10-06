@@ -1,8 +1,10 @@
-# GraphQL Typescript Server Boilerplate
+# Setting up a TypeORM Project
 
 ## TypeOrm
 
 Voor dit project gaan we TypeORM gebruiken.
+TypeOrm dient om een interface te maken voor je database. Zodat je functies kunt gebruiken om de database te raadplegen.
+
 [TypeOrm Setup](http://typeorm.io/#/)
 
 We volgen de Quick Start guide.  
