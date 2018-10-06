@@ -4,6 +4,8 @@
 
 _5 oktober 2018_
 
+## Ben Awad
+
 [Ben Awad](https://www.youtube.com/user/99baddawg) is een jonge developer dat YouTube filmpjes maakt.
 Zijn stack is React, React Native, GraphQL, Typescript, Node.js, PostgreSQL en Python. Ik kijk nu al een tijdje zijn filmpjes en heb hem via een reddit thread ontdekt op [/r/webdev](https://www.reddit.com/r/webdev/).
 
@@ -21,11 +23,9 @@ Hij maakt gebruik van [featherJS](https://docs.feathersjs.com/) en [apollo-serve
 
 Ik heb veel bijgeleerd over babel en wat gelezen over featherjs en apollo-server, maar ik ga toch een andere tutorial kiezen om mee te beginnen. namelijk [GraphQL Typescript Server Boilerplate](https://www.youtube.com/watch?v=2eWIr6bbons&list=PLN3n1USn4xlky9uj6wOhfsPez7KZOqm2V). Deze is redelijk recent van 23 april 2018. Deze tutorial ziet veel meer dan enkel GraphQL, zoals TypeScript en testing.
 
-In de Project Setup installeren we de stack. We gaan met GraphQL Yoga, TypeOrm en Typescript werken. Installatie loopt heel vlot.
+- In de [Project Setup](./Ben_Awad/GraphQL_Typescript_Server/episode0.md) installeren we de stack. We gaan met GraphQL Yoga, TypeOrm en Typescript werken. De installatie loopt heel vlot en ik krijg mijn eerste graphql query terug.
 
-- [Project Setup](./Ben_Awad/GraphQL_Typescript_Server/episode0.md)
-
-- [Creating an Entity](./Ben_Awad/GraphQL_Typescript_Server/episode1.md)
+- [Een entity maken](./Ben_Awad/GraphQL_Typescript_Server/episode1.md) is niet te moeilijk, maar typescript maps snap ik nog niet helemaal. Misschien dat ik eerst eens iets over typescript ga bekijken vooraleer ik verder ga met de volgende episode.
 
 ## Resources
 
