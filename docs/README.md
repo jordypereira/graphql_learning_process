@@ -1,31 +1,31 @@
 # New Technology: GraphQL
 
-> Voor school moet ik een nieuwe technologie leren en dit documenteren. Hier volgt mijn verhaal hoe dat ik GraphQL begin te leren.
+> For school I have to learn and document a new technology. Here's my story how I started to learn GraphQL.
 
-_5 oktober 2018_
+_5 October 2018_
 
 ## Ben Awad
 
-[Ben Awad](https://www.youtube.com/user/99baddawg) is een jonge developer dat YouTube filmpjes maakt.
-Zijn stack is React, React Native, GraphQL, Typescript, Node.js, PostgreSQL en Python. Ik kijk nu al een tijdje zijn filmpjes en heb hem via een reddit thread ontdekt op [/r/webdev](https://www.reddit.com/r/webdev/).
+[Ben Awad](https://www.youtube.com/user/99baddawg) is a young developer and YouTube content creator.
+His stack is React, React Native, GraphQL, Typescript, Node.js, PostgreSQL en Python. I've been watching his channel for a while now and discovered him on the reddit subreddit [/r/webdev](https://www.reddit.com/r/webdev/).
 
-## Een featherjs + graphql Tutorial
+## A featherjs + graphql Tutorial
 
-Vandaag ga ik beginnen aan een van zijn GraphQL tutorials, waar ik met hem mee kan volgen en coden. Namelijk [GraphQL tutorials](https://www.youtube.com/watch?v=6Jw629xrkF8&list=PLN3n1USn4xlnd-eR3bEZvIr04yoiSRnUl), dat uit 35 filmpjes bestaat en waarvan het eerste filmpje dateert van 3 januari 2017.
+Today I'll be starting one of his GraphQL tutorials, where I can code along with him. I'll be watching [GraphQL tutorials](https://www.youtube.com/watch?v=6Jw629xrkF8&list=PLN3n1USn4xlnd-eR3bEZvIr04yoiSRnUl), that consists of 35 videos. The first video was made in 3 January 2017.
 
-Mijn ervaring van de eerste tutorial kan je in detail bekijken op [episode 1](./Ben_Awad/GraphQL_Tutorials/episode1.md)
+You can read in detail how I went through the first [episode](./Ben_Awad/GraphQL_Tutorials/episode1.md)
 
-Ik kreeg het project niet meteen aan de slag. De babel versie dat hij gebruikt is al outdated en helemaal veranderd. Ik heb dit in [de documentatie](https://babeljs.io/docs/en/usage) opgezocht en het is uiteindelijk gelukt met babel lokaal in het project te installeren en npx te gebruiken als CLI.
+Setting up the project didn't go as smooth as I had hoped. The Babel that he used was oudated and the commands weere completly different. So I just googled babeljs and started reading [the documentation](https://babeljs.io/docs/en/usage). Eventually I got babel working by installing it locally in the project and using `npx babel-node` as the cli command.
 
-Hij maakt gebruik van [featherJS](https://docs.feathersjs.com/) en [apollo-server](https://www.apollographql.com/). Beide zijn ook enorm veranderd, dus dat wou ook niet meteen lukken. Zover mijn eerste project.
+For this project he will use [featherJS](https://docs.feathersjs.com/) and [apollo-server](https://www.apollographql.com/). These have also changed quite a bit, so my setup just didn't want to work. So far my first project.
 
 ## GraphQL Typescript Server Boilerplate
 
-Ik heb veel bijgeleerd over babel en wat gelezen over featherjs en apollo-server, maar ik ga toch een andere tutorial kiezen om mee te beginnen. namelijk [GraphQL Typescript Server Boilerplate](https://www.youtube.com/watch?v=2eWIr6bbons&list=PLN3n1USn4xlky9uj6wOhfsPez7KZOqm2V). Deze is redelijk recent van 23 april 2018. Deze tutorial ziet veel meer dan enkel GraphQL, zoals TypeScript en testing.
+I have learned a lot about Babel and read a bit about featherjs and apollo-server, but I have decided to choose an other project to start out with. [GraphQL Typescript Server Boilerplate](https://www.youtube.com/watch?v=2eWIr6bbons&list=PLN3n1USn4xlky9uj6wOhfsPez7KZOqm2V) is the one I'll be trying. This one first released in 23 April 2018. Here we'll be exploring GraphQL, TypeScript and testing. I'm excited.
 
-- In de [Project Setup](./Ben_Awad/GraphQL_Typescript_Server/episode0.md) installeren we de stack. We gaan met GraphQL Yoga, TypeOrm en Typescript werken. De installatie loopt heel vlot en ik krijg mijn eerste graphql query terug.
+- In the [Project Setup](./Ben_Awad/GraphQL_Typescript_Server/episode0.md) we install the stack. We'll be using GraphQL Yoga, TypeOrm and Typescript. The installation is very easy and I already executed my first graphql query.
 
-- [Een entity maken](./Ben_Awad/GraphQL_Typescript_Server/episode1.md) is niet te moeilijk, maar typescript maps snap ik nog niet helemaal. Misschien dat ik eerst eens iets over typescript ga bekijken vooraleer ik verder ga met de volgende episode.
+- [Creating an entity](./Ben_Awad/GraphQL_Typescript_Server/episode1.md) isn't very difficult, but I have trouble keeping up with TypeScript. Now I know I should be focussing on GraphQL, but maybe I'll watch a short introduction to TypeScript.
 
 ## Resources
 

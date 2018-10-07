@@ -1,36 +1,34 @@
 # Setting up a TypeORM Project
 
-## TypeOrm
+## TypeOrm setup
 
-Voor dit project gaan we TypeORM gebruiken.
-TypeOrm dient om een interface te maken voor je database. Zodat je functies kunt gebruiken om de database te raadplegen.
+Our ORM will be TypeOrm, which is made to be used with TypeScript.
 
 [TypeOrm Setup](http://typeorm.io/#/)
 
 We volgen de Quick Start guide.  
 `npm install typeorm -g`
 
-We gaan Postgres als database gebruiken dus in je project doe je de volgende commando om het project aan te maken:  
+We'll use Postgres as a database. The guide tells us this is the command we have to use:  
 `typeorm init --name graphql-ts-server-boilerplate --database postgres`
 
-Hij wilt dan dat we alle packages op hun versie gaan checken met een tool
+We can check all the package version and update them with a tool:  
 [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) `npm install -g npm-check-updates`  
-Dan check en update je met `ncu -a`. Dit update enkel de package.json dus moeten we `yarn` nog runnen.
+After w einstalled it we can update everything with `ncu -a`. This updates the package.json so we have to run `yarn`.
 
-### database setup
+### Database setup
 
-In ornconfig.json geef je je username en paswoord van je lokale postgres in, samen met de database naam.  
-Als postgres correct is ingesteld kan je gewoon createdb _databasename_ doen.
+Insert the username and password of our local postgres database in ornconfig.json, together with the database name which we create with `createdb databasename`.
 
-## TypeScript
+## TypeScript setup
 
-De config zit in tsconfig.json. We gaan de code nemen van andere projecten, namelijk [tsconfig](https://github.com/benawad/node-ts-graphql-boilerplate/blob/10_session_express_middleware/tsconfig.json).
+The config resides in tsconfig.json. Let's just 'steal' the code from an other project: [tsconfig](https://github.com/benawad/node-ts-graphql-boilerplate/blob/10_session_express_middleware/tsconfig.json).
 
-TS Lint is nodig om alle code gelijk te maken. TS Lint stelt de regels op en [Prettier](https://www.npmjs.com/package/prettier) past je code aan na een save/commit (zelf in te stellen). We gebruiken [tslint](https://github.com/benawad/node-ts-graphql-boilerplate/blob/10_session_express_middleware/tslint.json)
+TS Lint are rules to write consistent code. TS Lint defines the rules and [Prettier](https://www.npmjs.com/package/prettier) can transform your code after a save or commit. We'll use [tslint](https://github.com/benawad/node-ts-graphql-boilerplate/blob/10_session_express_middleware/tslint.json) and adjust it where needed.
 
 ## GraphQL Yoga
 
-[GraphQL Yoga](https://github.com/prisma/graphql-yoga) is een combinatie van alle packages die je normaal gebruikt:
+[GraphQL Yoga](https://github.com/prisma/graphql-yoga) is a combination of packages:
 
 - apollo-server
 - graphql-tools
@@ -38,12 +36,12 @@ TS Lint is nodig om alle code gelijk te maken. TS Lint stelt de regels op en [Pr
 
 `yarn add graphql-yoga`
 
-Vervang de content van index.ts door de Quickstart.  
-Voor de Typescript rules moeten we elke variabele nog een type geven. Je kan ze gewoon op `: any` zetten.
+Quickstart tells us to change our index.ts.  
+Our Typescript rules say that every variabele needs to be defined. For now we can give them `: any`.
 
-Als we nu `yarn start` doen kunnen we onze app testen op localhost:4000.
-Type hello en je krijgt Hello World terug. Perfect.
+Run `yarn start` and we can see our app on localhost:4000.
+Type hello and we get Hello World back. Perfect.
 
 ## Nodemon
 
-[Nodemon](https://www.npmjs.com/package/nodemon) restart de server als je code veranderd. `yarn add -D nodemon`. Verander je startup script naar nodemon --exec.
+[Nodemon](https://www.npmjs.com/package/nodemon) restarts the server if you change code. `yarn add -D nodemon`. Change your startup script to nodemon --exec.
