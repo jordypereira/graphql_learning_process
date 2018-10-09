@@ -27,6 +27,11 @@ I have learned a lot about Babel and read a bit about featherjs and apollo-serve
 
 - [Creating an entity](./Ben_Awad/GraphQL_Typescript_Server/episode1.md) isn't very difficult, but I have trouble keeping up with TypeScript. Now I know I should be focussing on GraphQL, but maybe I'll watch a short introduction to TypeScript.
 
+## TypeScript Basics
+
+So let's grasp the basics of this with once again [Ben Awad: Typescript Basics](https://www.youtube.com/watch?v=se72XMlG1Ro)  
+[My learning process](./Ben_Awad/Typescript_Basics/)
+
 ## Resources
 
 [Link to the resources page](./resources/)

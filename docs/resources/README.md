@@ -15,3 +15,5 @@
 - [uuid](https://www.npmjs.com/package/uuid)
 - [graphql-import](https://github.com/prisma/graphql-import)
 - [gql2ts](https://github.com/avantcredit/gql2ts/tree/master/packages/cli)
+- [TypeScript Basics](https://www.youtube.com/watch?v=se72XMlG1Ro)
+- [Typerscript Types vs Interfaces](https://medium.com/@martin_hotell/interface-vs-type-alias-in-typescript-2-7-2a8f1777af4c)
